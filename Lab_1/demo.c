@@ -5,7 +5,7 @@ int max(int a, int b) {
 }
 
 int main() {
-    int x = 5, y = 10;
+    int = 5, y = 10;
     printf("%d\n", max(x, y));
     return 0;
 }

@@ -6,7 +6,7 @@ c_keywords = {
     "register","restrict","return","short","signed","sizeof","static","struct",
     "switch","typedef","union","unsigned","void","volatile","while"
 }
-
+fkdd
 fname = input("Enter C file path: ")
 text = open(fname).read()
 text = re.sub(r'/\*.*?\*/', '', text, flags=re.S)
