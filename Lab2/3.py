@@ -10,4 +10,4 @@ while i < len(s) and s[i] == 'b':
 if i == len(s):
     print("Valid: Matches a^m b^n")
 else:
-    print("Invalid: a’s must come before b’s only")
+    print("Invalid: Does not match a^m b^n")
