@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-91.4%25-blue?style=for-the-badge&logo=python)
 ![C](https://img.shields.io/badge/C-8.6%25-grey?style=for-the-badge&logo=c)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+
 
 > "Compilers are the unsung heroes of programming. They take our human-readable nonsense and turn it into machine-readable nonsense." 
 
