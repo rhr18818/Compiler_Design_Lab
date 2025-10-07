@@ -20,9 +20,35 @@ def left_recursion(grammar):
     return updated_grammar
 
 
-# print("="*50)
-# Example grammar
-# grammar = {"A": ["Aa", "b"]}
-grammar = {"A": ["Abc", "Acd", "CD", "XY"]}
-print("Original:", grammar)
-print("After removing left recursion:", left_recursion(grammar))
+def get_user_grammer():
+    user_grammer={}
+    print("\nEnter your grammer production(eg,. A->Abc|de. 'done' when finished")
+    while True:
+        production_input = input("Prodcution: ").strip()
+        if production_input.lower() == 'done':
+            break
+        try:
+            key,prod_str = production_input.split('->')
+            key = key.strip()
+            prods = [p.strip() for p in prod_str.split('|')]
+            
+            if key in user_grammer:
+                user_grammer[key].extend(prods)
+            else:
+                user_grammer[key]=prods
+        except ValueError:
+            print("Invalid format. Use 'A->B|C' format.")
+    return user_grammer
+    
+
+grammer = {"A": ["Abc", "Acd", "CD", "XY"]}
+
+choice = input("Use default grammer ? (yes/no) : ").strip().lower()
+if choice =='no':
+    grammer = get_user_grammer()
+else:
+    # grammer = default_grammer
+    print("\nusing default grammer")
+    
+print("Original:", grammer)
+print("After removing left recursion:", left_recursion(grammer))
