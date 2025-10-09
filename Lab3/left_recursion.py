@@ -24,5 +24,12 @@ def left_recursion(grammar):
 # Example grammar
 # grammar = {"A": ["Aa", "b"]}
 grammar = {"A": ["Abc", "Acd", "CD", "XY"]}
-print("Original:", grammar)
-print("After removing left recursion:", left_recursion(grammar))
+pprint("Original Grammar:")
+for key, prods in grammar.items():
+    print(f"{key}->{' | '.join(prods)}")
+    
+print("\nAfter removing left recursion:")
+result = left_recursion(grammar)
+
+for key, prods in result.items():
+    print(f"{key}->{' | '.join(prods)}")
