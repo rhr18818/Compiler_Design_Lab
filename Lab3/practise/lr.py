@@ -34,9 +34,16 @@ def get_user_grammer():
             break
         try:
             key,prod_str = production_input.split('->')
-            key = key
-
-    
+            key = key.strip()
+            prods = [p.strip() for p in prod_str.split('|')]
+            
+            if key in new_grammer:
+                new_grammer[key].extend(prods)
+            else:
+                new_grammer[key]=prods
+        except ValueError:
+            print("Invalid format. Use 'A->B|C' format.")
+            
     return new_grammer
     
 grammer = {
@@ -49,5 +56,5 @@ else:
     # grammer = default_grammer
     print("\nusing default grammer")
 
-print("Origina Grammer: ",grammer)
+print("Original Grammer: ",grammer)
 print("After removing left recursion:", left_recursion(grammer))
