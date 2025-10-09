@@ -34,7 +34,7 @@ def get_user_grammer():
             break
         try:
             key,prod_str = production_input.split('->')
-            key = keyellllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+            key = key
 
     
     return new_grammer
