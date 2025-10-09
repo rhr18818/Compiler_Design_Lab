@@ -122,6 +122,13 @@ else:
     grammar = default_grammar
     print("\nUsing default grammar:")
     
-print("\nOriginal Grammar:", grammar)
-factored_grammar = left_factoring(grammar)
-print("\nAfter removing left factoring:", factored_grammar)
+print("Original Grammar:")
+for key, prods in grammar.items():
+    print(f"{key}->{' | '.join(prods)}")
+    
+print("\nAfter removing left recursion:")
+result = left_recursion(grammar)
+
+for key, prods in result.items():
+    print(f"{key}->{' | '.join(prods)}")
+
