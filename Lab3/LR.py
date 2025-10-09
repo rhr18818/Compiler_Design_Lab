@@ -49,6 +49,13 @@ if choice =='no':
 else:
     # grammer = default_grammer
     print("\nusing default grammer")
+
+print("Original Grammar:")
+for key, prods in grammar.items():
+    print(f"{key}->{' | '.join(prods)}")
     
-print("Original:", grammer)
-print("After removing left recursion:", left_recursion(grammer))
+print("\nAfter removing left recursion:")
+result = left_recursion(grammar)
+
+for key, prods in result.items():
+    print(f"{key}->{' | '.join(prods)}")
